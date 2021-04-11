@@ -1,7 +1,7 @@
 require("dotenv").config();
-
+const bodyParser = require("body-parser");
 const express = require("express");
-
+const cors = require("cors");
 const mongoose = require("mongoose");
 const router = require("./router");
 const app = express();
@@ -17,5 +17,7 @@ mongoose
     console.error(err);
   });
 
+app.use(cors());
+app.use(express.static("public"));
 app.use(router);
 app.listen(port);
