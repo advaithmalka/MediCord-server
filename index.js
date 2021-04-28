@@ -16,7 +16,7 @@ mongoose
     console.error(err);
   });
 
-const allowList = ["https://advaithmalka.github.io", "http://localhost:3000"];
+const allowList = ["https://advaithmalka.github.io"];
 app.use((req, res, next) => {
   if (allowList.indexOf(req.headers.origin) === -1) return res.sendStatus(401);
   next();
